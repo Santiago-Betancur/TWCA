@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Oldenburg&display=swap');
+
+/* Reset/Normalize Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body & Typography */
+body {
+    font-family: 'Oldenburg', serif;
+    color: #474852;
+    background-color: #EFEFEF;
+}
+
+h1, .h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #E77436;
+}
+
+/* Navigation Bar and Logo */
+.site-header {
+    background-color: #EFEFEF;
+    padding: 5px 0;
+    margin: 10px 15px;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-branding img {
+    max-height: 45px;
+}
+
+/* Navigation Menu */
+.main-navigation {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; 
+}
+
+.main-navigation ul {
+    display: flex;
+    list-style-type: none; 
+    padding: 0; 
+}
+
+.main-navigation li {
+    margin-right: 20px; 
+}
+
+.main-navigation li:last-child {
+    margin-right: 0; 
+}
+
+.main-navigation a {
+    text-decoration: none; 
+    color: #29292E; 
+    font-family: 'Lato', sans-serif; 
+    font-size: 18px; 
+    font-weight: bold; 
+}
+
+.main-navigation a:hover {
+    color: #F7CEB8;
+}
+
+.main-navigation .contact-button a {
+    background-color: #E77436;
+    color: white; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    border: none; 
+    font-weight: 700; 
+    transition: box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effect */
+    box-shadow: 0 0 0 2px transparent;
+    
+}
+
+.main-navigation .contact-button a:hover, .main-navigation .contact-button a:focus {
+    background-color: white; 
+    color:#E77436; 
+    text-decoration: none; 
+    box-shadow: 0 0 0 3px #E77436;
+}
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+/* Custom Button Styling */
+.btn-custom {
+    background-color: #E77436;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.btn-custom:hover {
+    background-color: #F7CEB8;
+    color: #29292E;
+}
+
+@media (max-width: 768px)  {
+    /* Navigation responsive */
+    .site-branding img {
+        max-height: 25px;
+    }
+
+    .main-navigation ul {
+        flex-direction: column;
+        align-items: start;
+    }
+    .main-navigation li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .main-navigation {
+        display: none; /* Hide the navigation menu by default on mobile */
+    }
+    .menu-toggle {
+        display: block; /* Ensure the toggle button is shown */
+        background: #E77436;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+    }
+}
