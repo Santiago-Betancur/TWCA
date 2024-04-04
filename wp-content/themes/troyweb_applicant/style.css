@@ -130,7 +130,7 @@ h3 {
         linear-gradient(to bottom, rgba(255,255,255,0) 50%, #EFEFEF 50%), 
         url('/wp-content/themes/troyweb_applicant/assets/images/hero-background.jpg') no-repeat center/cover;
     height: 600px;
-    border: 2px red solid;
+    
 }
 .container {
     display: flex;
@@ -145,43 +145,94 @@ h3 {
 }
 .image-circle-container {
     position: relative;
-    text-align: center;
+    width: fit-content;
+    margin: auto;
 }
 .image-circle {
-    width: 200px; /* Diameter of the circle */
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
-    border: 16px solid #cb5700; /* Dark Orange Border */
-    background: linear-gradient(145deg, #29292E, #474852); /* Gradient from Brand Dark to Grey */
-    margin: 0 auto;
-    position: relative;
+    border: 16px solid #cb5700;
+    background: linear-gradient(145deg, #29292E, #474852);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1;
 }
-.applicant-image{
+.applicant-image {
     position: absolute;
-    top: 50%; /* Adjust this value as needed */
-    left: 50%; /* Adjust this value as needed */
-    transform: translate(-50%, -50%); /* Center the image relative to its position */
-    z-index: 2; /* Ensure it's above the circle but adjust as necessary */
-}
+    top: 50%;
+    left: 36%;
+    transform: translate(-55%, -36%);
+    z-index: 2;
+    height: 400px;
+    width: 200px;}
+
 .right-container {
     color: #fff; /* Text color against the background */
-    padding-left: 20px; /* Space from the left container */
+    height: 100%;
     text-align: left;
-}
-.applicant-skills ul {
-    list-style: none;
-    padding: 0;
+    height:600px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px red solid;
+    flex: 1;
 }
+.right-container-content-1 {
+    display: flex;
+    height: 300px;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.applicant-species, .applicant-skills {
+    position: relative; /* Establish relative positioning context for pseudo-elements */
+    padding: 10px 20px; /* Padding around the text */
+    margin: 10px 0; /* Vertical spacing between elements */
+    color: #29292E; /* The color of the text */
+    width: auto;
+    background-color: #F7CEB8;
+    transform: rotate(-5deg) skew(-5deg);
+    display: flex;
+}
+
+.applicant-species h3, .applicant-skills h3 {
+    transform: rotate(5deg) skew(5deg); /* Adjust the angle to straighten the text */
+    z-index: 3; /* Above the pseudo-element */
+    font-size: large;
+    background-color: transparent; /* Ensures the text does not have the skewed background */
+    position: relative;
+    
+}
+
+.applicant-species p, .applicant-skills ul {
+    transform: rotate(5deg) skew(5deg); /* Adjust the angle to straighten the text */
+    display:block; /* Keeps the paragraph and list inline */
+    background-color: transparent; /* Ensures the text does not have the skewed background */
+    position: relative;
+}
+
+
 .applicant-skills li {
-    background: #E77436; /* Background color for skills */
-    color: #fff;
-    padding: 5px 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    display: inline-block; /* Display list items inline-block for individual transformation */
+    margin-right: 5px; /* Margin between skills */
+    transform: skew(10deg); /* Counter-skew to straighten the text */
+}
+.right-container-content-2::before {
+    content: '';
+    position: absolute;
+    top: 50%; /* Positioning from the top */
+    left: -25px; /* Positioning from the left, negative value to move it outwards */
+    width: 120%; /* Width longer than the container to allow for visible rotation */
+    height: 100%; /* Full height of the parent container */
+    background: transparent; /* No background color needed, this is just for rotation */
+    transform-origin: left bottom; /* Sets the origin for the rotation */
+    transform: rotate(-5deg); /* Rotates the container */
+    z-index: -1; /* Places this pseudo-element behind the actual content */
 }
 /* MEDIA QUERIES */
 @media (max-width: 768px)  {
