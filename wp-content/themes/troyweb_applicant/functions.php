@@ -10,6 +10,13 @@ function troyweb_theme_setup() {
         'menu-1' => esc_html__( 'Primary', 'troyweb-applicant' ),
     ) );
 }
+
+
+//Remove Tags from Images
+function filter_ptags_on_images($content){
+    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+ }
+ add_filter('the_content', 'filter_ptags_on_images');
 add_action( 'after_setup_theme', 'troyweb_theme_setup' );
 
 add_action('wp_enqueue_scripts', 'troyweb_applicant_scripts');

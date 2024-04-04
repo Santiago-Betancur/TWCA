@@ -14,8 +14,8 @@
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tw-logo-header.png" alt="<?php bloginfo('name'); ?>">
         </a>
         <button class="menu-toggle">
-            <span class="menu-icon">&#9776;</span> <!-- Hamburger icon -->
-            <span class="close-icon" style="display:none;">&times;</span> <!-- Close icon -->
+            <span class="menu-icon">&#9776;</span> 
+            <span class="close-icon" style="display:none;">&times;</span> 
         </button>
         <nav id="site-navigation" class="main-navigation">
             <?php

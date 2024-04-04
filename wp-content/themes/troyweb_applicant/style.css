@@ -25,6 +25,11 @@ h1, .h1 {
     color: #E77436;
 }
 
+h3 {
+    font-family: 'Lato', sans-serif;
+    color:#29292E;
+}
+
 /* Navigation Bar and Logo */
 .site-header {
     background-color: #EFEFEF;
@@ -47,6 +52,7 @@ h1, .h1 {
     display: flex;
     align-items: center; 
     justify-content: flex-start; 
+    
 }
 
 .main-navigation ul {
@@ -115,6 +121,69 @@ h1, .h1 {
     color: #29292E;
 }
 
+/* Applicant Profile section */
+.applicant-profile-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: 
+        linear-gradient(to bottom, rgba(255,255,255,0) 50%, #EFEFEF 50%), 
+        url('/wp-content/themes/troyweb_applicant/assets/images/hero-background.jpg') no-repeat center/cover;
+    height: 600px;
+    border: 2px red solid;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+.left-container, .right-container {
+    flex-basis: 50%;
+}
+.image-circle-container {
+    position: relative;
+    text-align: center;
+}
+.image-circle {
+    width: 200px; /* Diameter of the circle */
+    height: 200px;
+    border-radius: 50%;
+    border: 16px solid #cb5700; /* Dark Orange Border */
+    background: linear-gradient(145deg, #29292E, #474852); /* Gradient from Brand Dark to Grey */
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+.applicant-image{
+    position: absolute;
+    top: 50%; /* Adjust this value as needed */
+    left: 50%; /* Adjust this value as needed */
+    transform: translate(-50%, -50%); /* Center the image relative to its position */
+    z-index: 2; /* Ensure it's above the circle but adjust as necessary */
+}
+.right-container {
+    color: #fff; /* Text color against the background */
+    padding-left: 20px; /* Space from the left container */
+    text-align: left;
+}
+.applicant-skills ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.applicant-skills li {
+    background: #E77436; /* Background color for skills */
+    color: #fff;
+    padding: 5px 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+/* MEDIA QUERIES */
 @media (max-width: 768px)  {
     /* Navigation responsive */
     .site-header {
