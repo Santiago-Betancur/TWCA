@@ -1,28 +1,30 @@
 <?php
 // Styles for the "Applicant" custom post type
-function troyweb_applicant_scripts() {
+function troyweb_applicant_scripts()
+{
     wp_enqueue_style('troyweb-applicant-style', get_stylesheet_uri());
 }
 
 // Menu and navigation
-function troyweb_theme_setup() {
-    register_nav_menus( array(
-        'menu-1' => esc_html__( 'Primary', 'troyweb-applicant' ),
-    ) );
+function troyweb_theme_setup()
+{
+    register_nav_menus(array(
+        'menu-1' => esc_html__('Primary', 'troyweb-applicant'),
+    ));
 }
 
-
 //Remove Tags from Images
-function filter_ptags_on_images($content){
+function filter_ptags_on_images($content)
+{
     return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
- }
- add_filter('the_content', 'filter_ptags_on_images');
-add_action( 'after_setup_theme', 'troyweb_theme_setup' );
-
+}
+add_filter('the_content', 'filter_ptags_on_images');
+add_action('after_setup_theme', 'troyweb_theme_setup');
 add_action('wp_enqueue_scripts', 'troyweb_applicant_scripts');
 // Register the custom post type "Applicant"
-function troyweb_register_post_type_applicant() {
-// Define labels for the "Applicant" custom post type
+function troyweb_register_post_type_applicant()
+{
+    // Define labels for the "Applicant" custom post type
     $labels = array(
         'name'                  => _x('Applicants', 'Post type general name', 'troyweb-applicant'),
         'singular_name'         => _x('Applicant', 'Post type singular name', 'troyweb-applicant'),
@@ -36,7 +38,7 @@ function troyweb_register_post_type_applicant() {
         'not_found'             => __('No applicants found', 'troyweb-applicant'),
         'not_found_in_trash'    => __('No applicants found in Trash', 'troyweb-applicant'),
     );
- // Define arguments for the "Applicant" custom post type
+    // Define arguments for the "Applicant" custom post type
     $args = array(
         'labels'             => $labels,
         'public'             => true,
@@ -54,7 +56,8 @@ function troyweb_register_post_type_applicant() {
 }
 add_action('init', 'troyweb_register_post_type_applicant');
 // Register taxonomies for the "Applicant" custom post type    /////////////////////
-function troyweb_register_taxonomies() {
+function troyweb_register_taxonomies()
+{
     // Taxonomy: Skills
     register_taxonomy('skills', 'applicant', array(
         'label'             => __('Skills', 'troyweb-applicant'),
@@ -63,7 +66,7 @@ function troyweb_register_taxonomies() {
         'public'            => true,
         'show_ui'           => true,
     ));
-// Taxonomy: Experience
+    // Taxonomy: Experience
     register_taxonomy('experience', 'applicant', array(
         'label'             => __('Experience', 'troyweb-applicant'),
         'rewrite'           => array('slug' => 'experience'),
@@ -74,7 +77,8 @@ function troyweb_register_taxonomies() {
 }
 add_action('init', 'troyweb_register_taxonomies');
 // Register the "Core Value" post type
-function troyweb_register_post_type_core_value() {
+function troyweb_register_post_type_core_value()
+{
     // Define labels for the "Core Value" post type
     $labels = array(
         'name'                  => _x('Core Values', 'Post type general name', 'troyweb-applicant'),
@@ -89,7 +93,7 @@ function troyweb_register_post_type_core_value() {
         'not_found'             => __('No core values found', 'troyweb-applicant'),
         'not_found_in_trash'    => __('No core values found in Trash', 'troyweb-applicant'),
     );
-// Define arguments for the "Core Value" post type
+    // Define arguments for the "Core Value" post type
     $args = array(
         'labels'             => $labels,
         'public'             => true,
@@ -101,9 +105,7 @@ function troyweb_register_post_type_core_value() {
         'capability_type'    => 'post',
         'supports'           => array('title', 'editor', 'thumbnail'),
     );
-// Register the "Core Value" post type with WordPress
+    // Register the "Core Value" post type with WordPress
     register_post_type('core-value', $args);
 }
 add_action('init', 'troyweb_register_post_type_core_value');
-
-?>
