@@ -60,45 +60,73 @@ if (have_posts()) :
         <?php
         //   Core Values Section  
         // Fetch core values
-$args = array(
-    'post_type' => 'core-value',
-    'posts_per_page' => -1, 
-    'orderby' => 'menu_order', 
-    'order' => 'ASC' 
-);
-$core_values_query = new WP_Query($args);
-if ($core_values_query->have_posts()) : ?>
-    <div class="core-values-section">
-        <div class="container core-values-section-container">
-            <h2>Core Values:</h2>
-            <div class="core-values-container">
-                <?php while ($core_values_query->have_posts()) : $core_values_query->the_post(); ?>
-                    <div class="core-value">
-                        <div class="core-value-image">
-                            <?php if (has_post_thumbnail()) : ?>
-                                <?php the_post_thumbnail('full'); ?>
-                            <?php endif; ?>
-                        </div>
-                        <h3 class="core-value-title"><?php the_title(); ?></h3>
-                        <div class="core-value-description">
-                            <?php 
-                            the_content(); 
-                            ?>
-                        </div>
+        $args = array(
+            'post_type' => 'core-value',
+            'posts_per_page' => -1,
+            'orderby' => 'menu_order',
+            'order' => 'ASC'
+        );
+        $core_values_query = new WP_Query($args);
+        if ($core_values_query->have_posts()) : ?>
+            <div class="core-values-section">
+                <div class="container core-values-section-container">
+                    <h2>Core Values:</h2>
+                    <div class="core-values-container">
+                        <?php while ($core_values_query->have_posts()) : $core_values_query->the_post(); ?>
+                            <div class="core-value">
+                                <div class="core-value-image">
+                                    <?php if (has_post_thumbnail()) : ?>
+                                        <?php the_post_thumbnail('full'); ?>
+                                    <?php endif; ?>
+                                </div>
+                                <h3 class="core-value-title"><?php the_title(); ?></h3>
+                                <div class="core-value-description">
+                                    <?php
+                                    the_content();
+                                    ?>
+                                </div>
 
+                            </div>
+                        <?php endwhile; ?>
                     </div>
-                <?php endwhile; ?>
+                </div>
+            </div>
+            <?php wp_reset_postdata();  ?>
+        <?php endif; ?>
+        <!-- Previous sections above... -->
+
+<!-- Experience Section -->
+<div class="experience-section">
+    <div class="container experience-section-container">
+        <!-- Left side for the Experience title and bullet points -->
+        <div class="experience-left">
+            <div class="experience-title">
+                <h2>Experience:</h2>
+            </div>
+            <div class="experience-details">
+                <!-- Here you will loop through your experience taxonomy and display each item -->
+                <ul>
+                    <?php
+                    // Example code to fetch experience terms and display them
+                    $experience_terms = get_terms('experience');
+                    foreach ($experience_terms as $term) {
+                        echo '<li>' . esc_html($term->name) . '</li>';
+                    }
+                    ?>
+                </ul>
             </div>
         </div>
+        <!-- Right side for the image -->
+        <div class="experience-right">
+            <img src="/wp-content/themes/troyweb_applicant/assets/images/code-image.png" alt="Experience Image">
+        </div>
     </div>
-    <?php wp_reset_postdata();  ?>
-<?php endif; ?>
-<?php
-// This line needs to be within PHP tags to be executed
-add_filter('the_content', 'wpautop');
-?>
-    <?php the_content(); ?> 
-    <?php endwhile;
+</div>
+
+<!-- Rest of your content... -->
+
+        <?php the_content(); ?>
+<?php endwhile;
 else :
     echo '<p>No posts found.</p>';
 endif;

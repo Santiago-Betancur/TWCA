@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oldenburg&display=swap");
+
 /* Reset/Normalize Styles */
 *,
 *::before,
@@ -361,6 +362,76 @@ h3 {
   color: #333; /* Adjust as needed */
   margin-top: 0; /* Ensures there's no extra space above the text */
   text-align: center; /* Center the text */
+}
+/* Experience Section */
+.experience-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #ffffff;
+  height: 400px;
+  
+}
+.experience-section-container{
+  justify-content: space-between;
+}
+.experience-left {
+  display: flex;
+  align-items: flex-start;
+  width: 50%;
+}
+
+.experience-details ul li {
+  font-size: 22px; /* Adjust as needed */
+  line-height: 1.5; /* Adjust as needed */
+  margin-bottom: 8px; /* Space between bullet points */
+  letter-spacing: 1px;
+}
+.experience-righ{
+  width: 50%;
+}
+.experience-right img {
+  max-width: 80%; /* Ensure image is responsive and doesn't overflow */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Footer  */
+.site-footer {
+   /* This creates the thick top border effect */
+  background: #efefef; /* Adjust the background color as needed */
+  border-top: 25px solid #29292e; /* Adjust the color and size of the top border */
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px; /* Match this with your site's max width */
+  margin: 0 auto;
+  padding: 20px;
+}
+.footer-logo img {
+  /* Adjust the size as needed */
+  height: 80px;
+  width: auto;
+}
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #474852; 
+  text-decoration: none;
+}
+
+.footer-social i {
+  font-size: 22px; /* size of icons */
+}
+
+/* Ensure the icons stay in line and centered vertically */
+
+
+/* Optional: Add a hover effect */
+.footer-social a:hover {
+  color: #cb5700; /* color when hovered */
 }
 
 /* MEDIA QUERIES */
