@@ -6,19 +6,20 @@ function troyweb_applicant_scripts()
 }
 
 // Menu and navigation
-function troyweb_theme_setup()
+function troyweb_theme_setup() 
 {
     register_nav_menus(array(
         'menu-1' => esc_html__('Primary', 'troyweb-applicant'),
     ));
+    add_theme_support('post-thumbnails');
 }
-
+add_action('after_setup_theme', 'troyweb_theme_setup');
 //Remove Tags from Images
 function filter_ptags_on_images($content)
 {
     return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
-add_filter('the_content', 'filter_ptags_on_images');
+add_filter('the_content', 'filter_ptags_on_images', 100);
 add_action('after_setup_theme', 'troyweb_theme_setup');
 add_action('wp_enqueue_scripts', 'troyweb_applicant_scripts');
 // Register the custom post type "Applicant"

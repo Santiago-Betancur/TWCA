@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Oldenburg&display=swap" rel="stylesheet">
     <?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
     <header id="masthead" class="site-header">
         <div class="container">
@@ -48,7 +46,6 @@
             menuToggle.addEventListener('click', function() {
                 const isDisplayed = mainNavigation.style.display === 'block';
                 mainNavigation.style.display = isDisplayed ? 'none' : 'block';
-                // Toggle icons based on menu state
                 if (isDisplayed) {
                     closeIcon.style.display = 'none';
                     menuIcon.style.display = 'block';

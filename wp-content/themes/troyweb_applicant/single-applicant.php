@@ -59,41 +59,46 @@ if (have_posts()) :
         </div>
         <?php
         //   Core Values Section  
-        // Fetch the core values terms from the 'core_values' taxonomy
         // Fetch core values
-        $core_values = new WP_Query(array(
-            'post_type'      => 'core-value',
-            'posts_per_page' => -1, // Retrieve all core values
-            'orderby'        => 'title', // Order by the title or any other parameter
-            'order'          => 'ASC', // Order in ascending or descending order
-        ));
+$args = array(
+    'post_type' => 'core-value',
+    'posts_per_page' => -1, 
+    'orderby' => 'menu_order', 
+    'order' => 'ASC' 
+);
+$core_values_query = new WP_Query($args);
+if ($core_values_query->have_posts()) : ?>
+    <div class="core-values-section">
+        <div class="container core-values-section-container">
+            <h2>Core Values:</h2>
+            <div class="core-values-container">
+                <?php while ($core_values_query->have_posts()) : $core_values_query->the_post(); ?>
+                    <div class="core-value">
+                        <div class="core-value-image">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <?php the_post_thumbnail('full'); ?>
+                            <?php endif; ?>
+                        </div>
+                        <h3 class="core-value-title"><?php the_title(); ?></h3>
+                        <div class="core-value-description">
+                            <?php 
+                            the_content(); 
+                            ?>
+                        </div>
 
-        if ($core_values->have_posts()) : ?>
-            <div class="core-values-section">
-                <div class="container">
-                    <h2>Core Values:</h2>
-                    <div class="core-values-wrapper">
-                        <?php while ($core_values->have_posts()) : $core_values->the_post(); ?>
-                            <div class="core-value-item">
-                                <div class="core-value-image">
-                                    <?php the_post_thumbnail(); // Assumes each core value has a featured image 
-                                    ?>
-                                </div>
-                                <h3 class="core-value-title"><?php the_title(); ?></h3>
-                                <div class="core-value-description">
-                                    <?php the_content(); ?>
-                                </div>
-                            </div>
-                        <?php endwhile;
-                        wp_reset_postdata(); ?>
                     </div>
-                </div>
+                <?php endwhile; ?>
             </div>
-        <?php endif; ?>
-
-        <?php the_content(); ?> <!-- Display the main content of the post -->
-
-<?php endwhile;
+        </div>
+    </div>
+    <?php wp_reset_postdata();  ?>
+<?php endif; ?>
+<?php
+// This line needs to be within PHP tags to be executed
+add_filter('the_content', 'wpautop');
+?>
+    <?php the_content(); ?> 
+    <?php endwhile;
 else :
     echo '<p>No posts found.</p>';
 endif;
