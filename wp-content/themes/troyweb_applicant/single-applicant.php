@@ -6,8 +6,7 @@ if (have_posts()) :
         <!-- Section container -->
         <div class="applicant-profile-section">
             <div class="container"> <!-- Main content container -->
-
-                <!-- Split content into left and right containers -->
+            <!-- Split content into left and right containers -->
                 <div class="left-container">
                     <!-- Container for the circle and the robot image -->
                     <div class="image-circle-container">
@@ -20,20 +19,19 @@ if (have_posts()) :
                         </div> <!-- Circle container -->
                     </div>
                 </div>
-
                 <!-- Right side container for Applicant Info -->
                 <div class="right-container">
                     <div class="right-container-content-1">
-                        <h1>Troy Web Applicant:</h1>
+                        <h1>Troy Web Developers:</h1>
                         <h1 class="applicant-name"><?php the_title(); ?></h1> <!-- Display the post title -->
                     </div>
                     <div class="right-container-content-2">
                         <div class="applicant-species">
-                            <h3>Species:</h3>
+                            <h2>Species:</h2>
                             <p> <?php the_field('species'); ?></p>
                         </div>
                         <div class="applicant-skills">
-                            <h3>Skills: </h3>
+                            <h2>Skills: </h2>
                             <p>
                                 <?php
                                 $skills_terms = get_the_terms(get_the_ID(), 'skills');
@@ -46,10 +44,19 @@ if (have_posts()) :
                         </div>
                     </div>
                 </div>
-                <p class="applicant-detail"><?php the_field('detail'); ?></p> <!-- Displays the 'detail' field -->
             </div>
         </div>
-
+        <!-- About Me Section -->
+        <div class="about-me-section">
+            <div class="container">
+                <div class="about-me-heading">
+                    <h2>About Me: </h2>
+                </div>
+                <div class="about-me-detail">
+                <p><?php echo get_field('detail'); ?></p> <!-- Make sure to echo the field -->
+                </div>
+            </div>
+        </div>
         <?php the_content(); ?> <!-- Display the main content of the post -->
 
 <?php endwhile;

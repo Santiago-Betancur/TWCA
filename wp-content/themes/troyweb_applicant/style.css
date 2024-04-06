@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Oldenburg&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oldenburg&display=swap');
 /* Reset/Normalize Styles */
 *,
 *::before,
@@ -28,9 +27,20 @@ h1,
   letter-spacing: -1px;
   color: #e77436;
 }
+h2{
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: -1px;
+    color: #29292e;
+}
 h3 {
   font-family: "Lato", sans-serif;
   color: #29292e;
+  letter-spacing: -1px;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 32px;
 }
 
 /* Navigation Bar and Logo */
@@ -137,12 +147,12 @@ h3 {
 }
 .container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1000px;
   width: 100%;
   margin: 0 auto;
   height: 100%;
+  
 }
 .left-container,
 .right-container {
@@ -182,7 +192,6 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px red solid;
   width: 100%;
 }
 .right-container-content-1 {
@@ -198,7 +207,7 @@ h3 {
   flex-direction: column;
   flex: 1;
   position: relative;
-  font-size: 24px;
+  font-size: 22px;
   width: 100%;
 }
 
@@ -233,36 +242,61 @@ h3 {
   content: "";
   position: absolute; 
   left: 0; 
-  top: 0; /* Align to the top */
-  bottom: 0; /* Align to the bottom */
-  right: -1%; /* Extend the right side to make the background grow wider */
-  background-color: #f7ceb8; /* Background color */
-  transform: skew(-3deg) rotate(-3deg); /* Skew and rotate */
-  transform-origin: top left; /* Transform from the top left corner */
-  z-index: -1; /* Place behind the text */
+  top: 0; 
+  bottom: 0; 
+  right: -1%; 
+  background-color: #f7ceb8;
+  transform: skew(-3deg) rotate(-3deg);
+  transform-origin: top left;
+  z-index: -1;
   width: 400px;
 }
 
-.applicant-species h3,
 .applicant-species p,
-.applicant-skills h3,
+.applicant-skills h2,
 .applicant-skills ul {
-  transform: rotate(3deg) skew(3deg); /* Counteract the skew and rotation of the parent */
-  z-index: 3; /* Place above the pseudo-element */
-  background: transparent; /* Ensure text does not have a background */
+  transform: rotate(3deg) skew(3deg); 
+  z-index: 3; 
+  background: transparent; 
 }
 
 .applicant-skills ul {
-  padding: 0; /* Remove default padding */
-  list-style-type: none; /* Remove list style */
-  display: flex; /* Use flexbox for layout */
-  flex-wrap: wrap; /* Allow skills to wrap */
+  padding: 0;
+  list-style-type: none;
+  display: flex; 
+  flex-wrap: wrap; 
 }
 
 .applicant-skills li {
-  margin-right: 5px; /* Margin between skills */
+  margin-right: 5px;
+}
+/* About Me Section */
+.about-me-section {
+    background-color: #fff;
+    height: 400px;
+    padding: 50px 0;
+    padding-top: 150px;
 }
 
+.about-me-heading {
+    flex-basis: 20%;
+    display: flex;
+    align-items: flex-start; /* This vertically centers the heading */
+    justify-content: flex-start;
+    height: 100%;
+}
+.about-me-detail {
+    flex-basis: 80%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+    font-family: "Oldenburg", serif;
+}
+.about-me-detail p {
+    font-size: 22px;
+   
+}
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
   /* Navigation responsive */
@@ -282,8 +316,8 @@ h3 {
     margin-bottom: 10px;
   }
   .main-navigation {
-    display: none; /* Hide the navigation menu by default on mobile */
-  }
+    display: none;
+ }
   .menu-toggle {
     cursor: pointer;
     display: block;
@@ -295,32 +329,32 @@ h3 {
     margin-bottom: 5px;
   }
   .main-navigation {
-    position: absolute; /* Dropdown menu */
-    top: 100%; /* Align directly below the header */
+    position: absolute; 
+    top: 100%; 
     left: 0;
     right: 0;
-    display: none; /* Hide initially */
-    background-color: #efefef; /* Or any color that fits your design */
-    z-index: 1; /* Below the toggle button but above other content */
+    display: none; 
+    background-color: #efefef; 
+    z-index: 1; 
     flex-direction: column;
-    align-items: start; /* For vertical layout of menu items */
-    padding: 10px 10px; /* Add some padding for styling */
+    align-items: start; 
+    padding: 10px 10px; 
   }
   .main-navigation ul {
-    width: 100%; /* Full width */
+    width: 100%; 
   }
 
   .main-navigation li {
-    margin-bottom: 10px; /* Space between items */
-    width: 100%; /* Full width */
-    text-align: left; /* Align text for a cleaner look */
+    margin-bottom: 10px; 
+    width: 100%; 
+    text-align: left; 
   }
 
   .main-navigation li:last-child {
-    margin-right: 0; /* Ensures no extra margin on the last item */
+    margin-right: 0;
   }
 
   .main-navigation a {
-    display: block; /* Make links fill the container width for easier touch */
+    display: block;
   }
 }
