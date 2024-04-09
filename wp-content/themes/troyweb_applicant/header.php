@@ -36,7 +36,7 @@
             const closeIcon = document.querySelector('.close-icon');
 
             function showNavigationForDesktop() {
-                if (window.innerWidth > 760) {
+                if (window.innerWidth > 814) {
                     mainNavigation.style.display = 'flex';
                 } else {
                     mainNavigation.style.display = '';
