@@ -5,9 +5,10 @@
 *::before,
 *::after {
   box-sizing: border-box;
+ 
 }
 html {
-  font-size: 16px; 
+  font-size: 16px;
   margin: 0;
 }
 body,
@@ -17,11 +18,12 @@ h3,
 p {
   margin: 0;
   padding: 0;
+  
 }
 /* Body & Typography */
 body {
+  min-width: 400px;
   margin: 0;
-  padding: 0;
   font-family: "Oldenburg", serif;
   color: #474852;
   background-color: #efefef;
@@ -63,6 +65,7 @@ p {
   width: 100%;
   margin: 0 auto;
   height: 100%;
+  padding: 0 5%;
 }
 /* Navigation Bar and Logo */
 .site-header {
@@ -144,7 +147,7 @@ p {
   color: white;
   border-radius: 5px;
   padding: 10px 20px;
-  font-size: 1rem; 
+  font-size: 1rem;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -165,7 +168,7 @@ p {
     ),
     url("/wp-content/themes/troyweb_applicant/assets/images/hero-background.jpg")
       no-repeat center/cover;
-      height: 40rem;
+  height: 40rem;
 }
 .applicant-profile-section-mobile {
   display: none;
@@ -215,11 +218,10 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; 
+  align-items: flex-start;
   width: 80%;
   height: 50%;
   min-width: 300px;
- 
 }
 .right-container-content-2 {
   display: flex;
@@ -241,18 +243,18 @@ p {
   bottom: 0;
   z-index: 1;
   height: 50px;
-  width:100%;
+  width: 100%;
   position: absolute;
 }
-.applicant-species{
+.applicant-species {
   margin-bottom: 20px;
 }
-.applicant-skills{
+.applicant-skills {
   margin-top: 20px;
 }
 .applicant-species,
 .applicant-skills {
-  position: relative; 
+  position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -276,7 +278,7 @@ p {
   padding: 0;
   list-style-type: none;
   display: flex;
- }
+}
 
 .applicant-skills li {
   margin-right: 5px;
@@ -445,56 +447,47 @@ p {
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
   html {
-    font-size: 14px; /* Adjust base font size for smaller screens */
+    font-size: 62.5%; /* 1 rem = 10px */
   }
-  
+  /* Body & Typography */
   h1 {
-    font-size: 2.5rem; /* Smaller font size for h1 on small screens */
+    font-family: "Lato", sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #e77436;
+    
   }
-
   h2 {
-    font-size: 2rem; /* Adjust h2 font size for small screens */
+    font-family: "Lato", sans-serif;
+    font-weight: bolder;
+    font-size: 2.6rem;
+    letter-spacing: -1px;
+    color: #29292e;
   }
-
   h3 {
-    font-size: 1.75rem; /* Adjust h3 font size for small screens */
+    font-family: "Lato", sans-serif;
+    color: white;
+    letter-spacing: -1px;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 2.2rem;
   }
-  
-  .applicant-profile-section {
-    display: flex; /* or block, depending on your layout needs */
+  p,
+  li,
+  i,
+  a {
+    font-size: 1.8rem;
   }
-  
-  .applicant-profile-section-mobile {
-    display: none;
+  .container {
+    display: flex;
+    align-items: center;
+    max-width: 80rem; /* 1000px */
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    padding: 0 1%;
   }
-
-/* Body & Typography */
-h1 {
-  font-family: "Lato", sans-serif;
-  font-size: 38px;
-  font-weight: 700;
-  letter-spacing: -1px;
-  color: #e77436;
-}
-h2 {
-  font-family: "Lato", sans-serif;
-  font-weight: 700;
-  font-size: 26px;
-  letter-spacing: -1px;
-  color: #29292e;
-}
-h3 {
-  font-family: "Lato", sans-serif;
-  color: white;
-  letter-spacing: -1px;
-  font-weight: 700;
-  font-style: italic;
-  font-size: 22px;
-}
-p, li, i, a {
-  font-size: 18px;
-}
-
   /* Navigation responsive */
   .site-header {
     position: relative;
@@ -517,7 +510,7 @@ p, li, i, a {
   .menu-toggle {
     cursor: pointer;
     display: block;
-    color: #29292e;;
+    color: #29292e;
     border: none;
     margin-bottom: 5px;
     font-size: 22px;
@@ -553,8 +546,192 @@ p, li, i, a {
     display: block;
   }
 
-/* Applicant Profile section adjustments for mobile */
-
-
+  /* Applicant Profile section adjustments for mobile */
+  .applicant-profile-section {
+    display: none;
+  }
+  .applicant-profile-section-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 600px;
+    background-color: white;
+  }
+  .applicant-intro-container {
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 50%,
+      #efefef 50%
+    ),
+    url("/wp-content/themes/troyweb_applicant/assets/images/hero-background.jpg")
+      no-repeat center/cover;
+  }
+  .applicant-info-container{
+    height: 50%;
+}
+.applicant-h1 {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: nowrap;
+}
+.image-circle-container {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+}
+.image-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 12px solid #cb5700;
+  background: linear-gradient(180deg, #29292e, #a2a6b9);
+  position: absolute;
+  transform: translate(-50%, 14%);
+  z-index: 1;
+}
+.robot-image img{
+  position: absolute;
+  top: 54%;
+  left: 70%;
+  transform: translate(-55%, -40%);
+  z-index: 2;
+  height: 22rem;
+  width: auto;
+}
+.applicant-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
+.applicant-species, .applicant-skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.background-shape {
+  background-color: #f7ceb8;
+  clip-path: polygon(0 30%, 95% 0, 100% 80%, 0 100%);
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  height: 50px;
+  width: 80%;
+  position: absolute;
+}
+.applicant-skills h2,
+.applicant-species h2 {
+  position: relative; /* Add position relative if using z-index */
+  z-index: 5; /* Make sure text z-index is higher than its background */
+  width:auto;
+}
+.applicant-species p,
+.applicant-skills p {
+  position: relative; /* Add position relative if using z-index */
+  z-index: 5; /* Make sure text z-index is higher than its background */
+  width: auto;
+}
 }
 
+/* Very small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 56.25%; /* 1 rem = 9px; 56.25% of 16px default */
+  }
+
+  /* Adjust the body font size if needed */
+  body {
+    font-size: 1.4rem; /* Body font size to 14px */
+  }
+
+  /* Header styles */
+  .site-header .site-branding img {
+    max-height: 3rem; /* 30px */
+  }
+
+  /* Navigation styles */
+  .main-navigation a,
+  .menu-toggle {
+    font-size: 1.8rem; /* 18px */
+  }
+
+  /* Header and Title font sizes */
+  h1 {
+    font-size: 2.4rem; /* 24px for main titles */
+  }
+
+  h2 {
+    font-size: 2rem; /* 20px for section titles */
+  }
+
+  h3 {
+    font-size: 1.8rem; /* 18px for sub-titles */
+  }
+
+  /* Applicant Profile section adjustments */
+  .applicant-profile-section-mobile {
+    padding: 1.5rem 0; /* Reduce padding for smaller screens */
+  }
+
+  .applicant-intro-container {
+    height: 50%;
+    /* Adjust background if needed */
+  }
+
+  .applicant-image-circle-container, .image-circle-container {
+    width: 50%; /* Smaller width for the circle container */
+  }
+
+  .applicant-image-circle, .image-circle {
+    width: 12rem; /* 120px for the image circle */
+    height: 12rem; /* 120px for the image circle */
+    border: 0.8rem solid #cb5700; /* Adjust border size to 8px */
+  }
+
+  .applicant-robot-image img {
+    width: 18rem; /* 180px for robot image */
+    /* Adjust position if needed */
+  }
+
+  .applicant-info-container {
+    height: 50%;
+    /* Adjust padding and text alignment if needed */
+  }
+
+  /* Adjust species and skills */
+  .applicant-species, .applicant-skills {
+    /* Adjust font sizes, margins, and paddings */
+    font-size: 1.6rem; /* 16px for text within species and skills */
+  }
+
+  /* Background shapes */
+  .background-shape {
+    height: 4rem; /* 40px height for background shapes */
+    width: 90%; /* Increase width to 90% of its container */
+    clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+    /* Adjust clip-path points if necessary */
+  }
+
+  /* Ensure text is visible and properly aligned */
+  .applicant-species h2,
+  .applicant-species p,
+  .applicant-skills h2,
+  .applicant-skills p {
+    z-index: 2;
+    /* Other text adjustments as necessary */
+  }
+
+  /* Other necessary style adjustments for smaller screens can be added here */
+}
