@@ -5,11 +5,10 @@
 *::before,
 *::after {
   box-sizing: border-box;
- 
 }
 html {
   font-size: 16px;
-  margin: 0;
+  margin-top: 0 !important;
 }
 body,
 h1,
@@ -18,11 +17,10 @@ h3,
 p {
   margin: 0;
   padding: 0;
-  
 }
 /* Body & Typography */
 body {
-  min-width: 400px;
+  min-width: 350px;
   margin: 0;
   font-family: "Oldenburg", serif;
   color: #474852;
@@ -32,54 +30,61 @@ body {
 /* Body & Typography */
 h1 {
   font-family: "Lato", sans-serif;
-  font-size: 3rem; /* 48px */
+  font-size: 2.5rem;
   font-weight: 700;
-  letter-spacing: -0.05em; /* Adjust letter-spacing responsively */
+  letter-spacing: -0.05em; 
   color: #e77436;
 }
-
 h2 {
   font-family: "Lato", sans-serif;
   font-weight: 700;
-  font-size: 2.25rem; /* 36px */
+  font-size: 1.8rem;
   letter-spacing: -0.05em;
   color: #29292e;
 }
-
 h3 {
   font-family: "Lato", sans-serif;
   color: white;
   font-weight: 700;
   font-style: italic;
-  font-size: 2rem; /* 32px */
+  font-size: 1.6rem;
   letter-spacing: -0.05em;
 }
 p {
   font-size: 1.375rem;
 }
-
 .container {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   max-width: 80rem; /* 1000px */
   width: 100%;
   margin: 0 auto;
   height: 100%;
-  padding: 0 5%;
+  padding: 0 8%;
 }
 /* Navigation Bar and Logo */
 .site-header {
   background-color: #efefef;
-  padding: 0;
-  margin: 0 0.9375rem 1.25rem;
 }
-.site-header .container {
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 85rem; /* 1000px */
+  width: 100%;
+  margin: 0 auto;
+  height: fit-content;
+  padding: 0 5%;
+}
+.site-header .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .site-branding img {
-  max-height: 2.83rem;
+  height: 70px;
+  padding: 10px 0;
 }
 
 /* Navigation Menu */
@@ -87,44 +92,39 @@ p {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-}
-
+  padding-top: 0.5%;
+ }
 .main-navigation ul {
   display: flex;
   list-style-type: none;
   padding: 0;
 }
-
 .main-navigation li {
-  margin-right: 1.25rem; /* 20px */
+  margin-right: 0.9rem; /* 20px */
 }
 .main-navigation li:last-child {
   margin-right: 0;
 }
-
 .main-navigation a {
   text-decoration: none;
   color: #29292e;
   font-family: "Lato", sans-serif;
-  font-size: 1.5rem; /* 22px */
+  font-size: 1.375rem;
   font-weight: bold;
 }
-
 .main-navigation a:hover {
   color: #f7ceb8;
 }
-
 .main-navigation .contact-button a {
   background-color: #e77436;
   color: white;
-  padding: 10px 20px;
+  padding: 8px 20px;
   border-radius: 5px;
   border: none;
   font-weight: 700;
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
   box-shadow: 0 0 0 2px transparent;
 }
-
 .main-navigation .contact-button a:hover,
 .main-navigation .contact-button a:focus {
   background-color: white;
@@ -132,25 +132,9 @@ p {
   text-decoration: none;
   box-shadow: 0 0 0 3px #e77436;
 }
-
 .menu-toggle {
   display: none;
 }
-/* Utility Classes */
-.text-center {
-  text-align: center;
-}
-
-/* Custom Button Styling */
-.btn-custom {
-  background-color: #e77436;
-  color: white;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
 .btn-custom:hover {
   background-color: #f7ceb8;
   color: #29292e;
@@ -201,8 +185,8 @@ p {
   left: 70%;
   transform: translate(-55%, -36%);
   z-index: 2;
+  height: auto;
 }
-
 .right-container {
   color: #29292e;
   text-align: left;
@@ -213,15 +197,23 @@ p {
   justify-content: space-between;
   width: 100%;
 }
-
 .right-container-content-1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  width: 80%;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
   height: 50%;
   min-width: 300px;
+}
+.applicant-name {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  width: 400px;
+  flex-wrap: nowrap;
+  text-align: left;
 }
 .right-container-content-2 {
   display: flex;
@@ -258,43 +250,42 @@ p {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 100%;
+  width:100%;
+  flex-wrap: nowrap;
   z-index: 2;
 }
 .applicant-skills h2,
 .applicant-species h2 {
-  position: relative; /* Add position relative if using z-index */
-  z-index: 5; /* Make sure text z-index is higher than its background */
+  position: relative;
+  z-index: 5;
   width: 40%;
 }
 .applicant-species p,
 .applicant-skills p {
-  position: relative; /* Add position relative if using z-index */
-  z-index: 5; /* Make sure text z-index is higher than its background */
+  position: relative;
+  z-index: 5;
   width: 80%;
 }
-/* Adjust the unordered list for skills */
 .applicant-skills ul {
   padding: 0;
   list-style-type: none;
   display: flex;
 }
-
 .applicant-skills li {
   margin-right: 5px;
 }
+
 /* About Me Section */
 .about-me-section {
   background-color: #fff;
-  height: 400px;
-  padding: 50px 0;
-  padding-top: 150px;
+  height: auto;
+  padding: 100px 0;
+  height: 300px;
 }
-
 .about-me-heading {
   flex-basis: 20%;
   display: flex;
-  align-items: flex-start; /* This vertically centers the heading */
+  align-items: flex-start;
   justify-content: flex-start;
   height: 100%;
 }
@@ -305,9 +296,6 @@ p {
   justify-content: flex-start;
   height: 100%;
   font-family: "Oldenburg", serif;
-}
-.about-me-detail p {
-  font-size: 22px;
 }
 
 /* Core Value Section */
@@ -328,6 +316,7 @@ p {
 }
 .core-values-section-container h2 {
   align-self: flex-start;
+  justify-self: flex-start;
   padding-bottom: 20px;
 }
 .core-values-section {
@@ -336,7 +325,6 @@ p {
   position: relative;
   background-color: #fff;
 }
-
 .core-values-container {
   display: flex;
   flex-direction: row;
@@ -353,7 +341,6 @@ p {
   justify-content: space-between;
   flex: 0 1 20%;
 }
-
 .core-value h3 {
   color: white;
 }
@@ -366,15 +353,15 @@ p {
 }
 .core-value p {
   margin-top: 15px;
-  font-size: 18px;
-  color: white; /* Adjust as needed */
+  font-size: 16px;
+  color: white;
 }
 .core-value-description {
-  font-size: 1rem;
-  color: #333; /* Adjust as needed */
-  margin-top: 0; /* Ensures there's no extra space above the text */
-  text-align: center; /* Center the text */
+  color: #333;
+  margin-top: 0;
+  text-align: center;
 }
+
 /* Experience Section */
 .experience-section {
   display: flex;
@@ -389,39 +376,39 @@ p {
 .experience-left {
   display: flex;
   align-items: flex-start;
+  align-items: flex-start;
   width: 50%;
 }
-
+.experience-details ul {
+  margin: 0 0 0 15px;
+}
 .experience-details ul li {
-  font-size: 22px; /* Adjust as needed */
-  line-height: 1.5; /* Adjust as needed */
-  margin-bottom: 8px; /* Space between bullet points */
+  line-height: 1.5;
+  margin-bottom: 8px;
   letter-spacing: 1px;
+  font-size: 1.375rem;
 }
 .experience-righ {
   width: 50%;
 }
 .experience-right img {
-  max-width: 80%; /* Ensure image is responsive and doesn't overflow */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 80%;
+  height: auto;
 }
 
 /* Footer  */
 .site-footer {
-  /* This creates the thick top border effect */
-  background: #efefef; /* Adjust the background color as needed */
-  border-top: 25px solid #29292e; /* Adjust the color and size of the top border */
+  background: #efefef;
+  border-top: 25px solid #29292e;
 }
 .footer-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  max-width: 1200px; /* Match this with your site's max width */
   margin: 0 auto;
   padding: 20px;
 }
 .footer-logo img {
-  /* Adjust the size as needed */
   height: 80px;
   width: auto;
 }
@@ -432,36 +419,49 @@ p {
   color: #474852;
   text-decoration: none;
 }
-
 .footer-social i {
-  font-size: 22px; /* size of icons */
+  font-size: 22px;
 }
-
-/* Ensure the icons stay in line and centered vertically */
-
-/* Optional: Add a hover effect */
 .footer-social a:hover {
-  color: #cb5700; /* color when hovered */
+  color: #cb5700;
 }
 
 /* MEDIA QUERIES */
-@media (max-width: 768px) {
-  html {
-    font-size: 62.5%; /* 1 rem = 10px */
+@media (max-width: 870px) {
+  .main-header .main-navigation li {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 0.5rem;
+    text-align: left;
   }
-  /* Body & Typography */
+  .main-navigation li:last-child {
+    margin-right: 0;
+  }
+  .header-container {
+    justify-content: space-between;
+    padding: 0 2%;
+  }
+}
+
+@media (max-width: 768px) {
+   /* Body & Typography */
+  html {
+    font-size: 62.5%; 
+  }
+  body {
+    min-width: 375px;
+  }
   h1 {
     font-family: "Lato", sans-serif;
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: 700;
     letter-spacing: -1px;
     color: #e77436;
-    
   }
   h2 {
     font-family: "Lato", sans-serif;
     font-weight: bolder;
-    font-size: 2.6rem;
+    font-size: 2.5rem;
     letter-spacing: -1px;
     color: #29292e;
   }
@@ -481,20 +481,21 @@ p {
   }
   .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    max-width: 80rem; /* 1000px */
+    max-width: 80rem; 
     width: 100%;
     margin: 0 auto;
     height: 100%;
-    padding: 0 1%;
+    padding: 0 3%;
   }
   /* Navigation responsive */
   .site-header {
     position: relative;
+    z-index: 3;
   }
-
   .site-branding img {
-    max-height: 37px;
+    height: 5rem;
   }
   .main-navigation ul {
     flex-direction: column;
@@ -523,7 +524,7 @@ p {
     right: 0;
     display: none;
     background-color: #efefef;
-    z-index: 1;
+    z-index: 3;
     flex-direction: column;
     align-items: start;
     padding: 10px 10px;
@@ -531,21 +532,17 @@ p {
   .main-navigation ul {
     width: 100%;
   }
-
   .main-navigation li {
     margin-bottom: 10px;
     width: 100%;
     text-align: left;
   }
-
   .main-navigation li:last-child {
     margin-right: 0;
   }
-
   .main-navigation a {
     display: block;
   }
-
   /* Applicant Profile section adjustments for mobile */
   .applicant-profile-section {
     display: none;
@@ -554,7 +551,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     margin: 0;
     height: 600px;
     background-color: white;
@@ -563,175 +560,216 @@ p {
     width: 100%;
     height: 50%;
     background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0) 50%,
-      #efefef 50%
-    ),
-    url("/wp-content/themes/troyweb_applicant/assets/images/hero-background.jpg")
-      no-repeat center/cover;
+        to bottom,
+        rgba(255, 255, 255, 0) 50%,
+        #efefef 50%
+      ),
+      url("/wp-content/themes/troyweb_applicant/assets/images/hero-background.jpg")
+        no-repeat center/cover;
   }
-  .applicant-info-container{
-    height: 50%;
-}
-.applicant-h1 {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-  flex-wrap: nowrap;
-}
-.image-circle-container {
-  position: relative;
-  width: fit-content;
-  margin: auto;
-}
-.image-circle {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 12px solid #cb5700;
-  background: linear-gradient(180deg, #29292e, #a2a6b9);
-  position: absolute;
-  transform: translate(-50%, 14%);
-  z-index: 1;
-}
-.robot-image img{
-  position: absolute;
-  top: 54%;
-  left: 70%;
-  transform: translate(-55%, -40%);
-  z-index: 2;
-  height: 22rem;
-  width: auto;
-}
-.applicant-info-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 50%;
-}
-.applicant-species, .applicant-skills {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-.background-shape {
-  background-color: #f7ceb8;
-  clip-path: polygon(0 30%, 95% 0, 100% 80%, 0 100%);
-  position: absolute;
-  top: 0;
-  left: 10%;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  height: 50px;
-  width: 80%;
-  position: absolute;
-}
-.applicant-skills h2,
-.applicant-species h2 {
-  position: relative; /* Add position relative if using z-index */
-  z-index: 5; /* Make sure text z-index is higher than its background */
-  width:auto;
-}
-.applicant-species p,
-.applicant-skills p {
-  position: relative; /* Add position relative if using z-index */
-  z-index: 5; /* Make sure text z-index is higher than its background */
-  width: auto;
-}
-}
-
-/* Very small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  html {
-    font-size: 56.25%; /* 1 rem = 9px; 56.25% of 16px default */
-  }
-
-  /* Adjust the body font size if needed */
-  body {
-    font-size: 1.4rem; /* Body font size to 14px */
-  }
-
-  /* Header styles */
-  .site-header .site-branding img {
-    max-height: 3rem; /* 30px */
-  }
-
-  /* Navigation styles */
-  .main-navigation a,
-  .menu-toggle {
-    font-size: 1.8rem; /* 18px */
-  }
-
-  /* Header and Title font sizes */
-  h1 {
-    font-size: 2.4rem; /* 24px for main titles */
-  }
-
-  h2 {
-    font-size: 2rem; /* 20px for section titles */
-  }
-
-  h3 {
-    font-size: 1.8rem; /* 18px for sub-titles */
-  }
-
-  /* Applicant Profile section adjustments */
-  .applicant-profile-section-mobile {
-    padding: 1.5rem 0; /* Reduce padding for smaller screens */
-  }
-
-  .applicant-intro-container {
-    height: 50%;
-    /* Adjust background if needed */
-  }
-
-  .applicant-image-circle-container, .image-circle-container {
-    width: 50%; /* Smaller width for the circle container */
-  }
-
-  .applicant-image-circle, .image-circle {
-    width: 12rem; /* 120px for the image circle */
-    height: 12rem; /* 120px for the image circle */
-    border: 0.8rem solid #cb5700; /* Adjust border size to 8px */
-  }
-
-  .applicant-robot-image img {
-    width: 18rem; /* 180px for robot image */
-    /* Adjust position if needed */
-  }
-
   .applicant-info-container {
-    height: 50%;
-    /* Adjust padding and text alignment if needed */
+    height: 300px;
+    margin: 0;
   }
-
-  /* Adjust species and skills */
-  .applicant-species, .applicant-skills {
-    /* Adjust font sizes, margins, and paddings */
-    font-size: 1.6rem; /* 16px for text within species and skills */
+ 
+  .applicant-h1 {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: nowrap;
+    min-width: 375px;
   }
-
-  /* Background shapes */
-  .background-shape {
-    height: 4rem; /* 40px height for background shapes */
-    width: 90%; /* Increase width to 90% of its container */
-    clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
-    /* Adjust clip-path points if necessary */
+  .image-circle-container {
+    position: relative;
+    width: fit-content;
+    margin: auto;
   }
-
-  /* Ensure text is visible and properly aligned */
-  .applicant-species h2,
-  .applicant-species p,
-  .applicant-skills h2,
-  .applicant-skills p {
+  .image-circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 10px solid #cb5700;
+    background: linear-gradient(180deg, #29292e, #a2a6b9);
+    position: absolute;
+    transform: translate(-50%, 14%);
+    z-index: 1;
+  }
+  .robot-image img {
+    position: absolute;
+    top: 70%;
+    left: 60%;
+    transform: translate(-55%, -36%);
     z-index: 2;
-    /* Other text adjustments as necessary */
+    height: auto;
+    width: 123px;
+  }
+  .applicant-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 100%;
+  }
+  .applicant-species,
+  .applicant-skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding:0 5%;
+  }
+  .background-shape {
+    background-color: #f7ceb8;
+    clip-path: polygon(0 30%, 95% 0, 100% 80%, 0 100%);
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    height: 50px;
+    width: 80%;
+    position: absolute;
+  }
+  .applicant-skills h2,
+  .applicant-species h2 {
+    position: relative;
+    z-index: 5;
+    width: auto;
+    padding-right: 15px;
+  }
+  .applicant-species p,
+  .applicant-skills p {
+    position: relative;
+    z-index: 5;
+    width: auto;
+  }
+  /* About Me Section */
+  .about-me-section {
+    background-color: #fff;
+    height: 300px;
+    padding: 25px 0;
+    flex-direction: column;
   }
 
-  /* Other necessary style adjustments for smaller screens can be added here */
+  .about-me-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .about-me-detail p {
+    text-align: left;
+    padding: 0 10%;
+  }
+
+  /* Core Value Section */
+  .core-values-section {
+    height: fit-content;
+    background: linear-gradient(
+      165deg,
+      #fff 15%,
+      #e77436 15%,
+      #e77436 85%,
+      #fff 30%
+    );
+  }
+  .core-values-section-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 200px;
+  }
+  .core-values-section-container h2 {
+    align-self: center;
+    padding-bottom: 20px;
+  }
+  .core-values-section {
+    display: flex;
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+  }
+
+  .core-values-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 5%;
+  }
+  .core-value {
+    margin-bottom: 5%;
+  }
+  .core-value h3 {
+    color: white;
+  }
+  .core-value-image img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+  .core-value-description p {
+    font-size: 2rem;
+  }
+  
+  /* Experience Section */
+  .experience-section-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .experience-section {
+    height: fit-content;
+    padding-bottom: 20px;
+  }
+  .experience-left {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .experience-details {
+    margin: 0;
+  }
+  .experience-details ul {
+    margin: 15px 0 0 0;
+  }
+  .experience-details ul li {
+    line-height: 1.2;
+    margin-bottom: 5px;
+    letter-spacing: 0.8px;
+    font-size: 2rem;
+  }
+  .experience-right {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+  }
+  .experience-right img {
+    max-width: 60%;
+  }
+  /* Footer */
+  .footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  .footer-logo img {
+    padding-bottom: 20px;
+  }
+}
+@media (max-width: 375px) {
+  html {
+    font-size: 52.5%;
+  }
 }

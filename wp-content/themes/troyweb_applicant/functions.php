@@ -6,7 +6,7 @@ function troyweb_applicant_scripts()
 }
 
 // Menu and navigation
-function troyweb_theme_setup() 
+function troyweb_theme_setup()
 {
     register_nav_menus(array(
         'menu-1' => esc_html__('Primary', 'troyweb-applicant'),
@@ -51,7 +51,6 @@ function troyweb_register_post_type_applicant()
         'capability_type'    => 'post',
         'supports'           => array('title', 'editor', 'thumbnail'),
     );
-
     // Register the "Applicant" custom post type with WordPress
     register_post_type('applicant', $args);
 }

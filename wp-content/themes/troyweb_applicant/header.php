@@ -10,14 +10,17 @@
 </head>
 <body <?php body_class(); ?>>
     <header id="masthead" class="site-header">
-        <div class="container">
+        <div class="header-container">
+            <!-- Site branding/logo, linking back to the home page. -->
             <a class="site-branding" href="<?php echo esc_url(home_url('/')); ?>">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tw-logo-header.png" alt="<?php bloginfo('name'); ?>">
             </a>
+             <!-- Mobile menu toggle button. -->
             <button class="menu-toggle">
                 <span class="menu-icon">&#9776;</span>
                 <span class="close-icon" style="display:none;">&times;</span>
             </button>
+            <!-- Navigation menu. -->
             <nav id="site-navigation" class="main-navigation">
                 <?php
                 wp_nav_menu(array(
@@ -29,12 +32,13 @@
         </div>
     </header>
     <script>
+         // JavaScript for toggling the navigation menu on mobile
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.querySelector('.menu-toggle');
             const mainNavigation = document.querySelector('.main-navigation');
             const menuIcon = document.querySelector('.menu-icon');
             const closeIcon = document.querySelector('.close-icon');
-
+            // Function to display navigation for desktop sizes
             function showNavigationForDesktop() {
                 if (window.innerWidth > 814) {
                     mainNavigation.style.display = 'flex';
@@ -44,6 +48,7 @@
             }
             showNavigationForDesktop();
             window.addEventListener('resize', showNavigationForDesktop);
+            // Event listener for toggle button click
             menuToggle.addEventListener('click', function() {
                 const isDisplayed = mainNavigation.style.display === 'block';
                 mainNavigation.style.display = isDisplayed ? 'none' : 'block';

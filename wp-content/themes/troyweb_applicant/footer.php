@@ -1,7 +1,6 @@
 <footer class="site-footer">
     <div class="container footer-container">
         <div class="footer-logo">
-            <!-- Replace with the path to your logo image -->
             <img src="/wp-content/themes/troyweb_applicant/assets/images/tw-logo-footer.png" alt="Troy Web Consulting Logo">
         </div>
         <div class="footer-social">
