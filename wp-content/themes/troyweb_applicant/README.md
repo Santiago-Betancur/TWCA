@@ -17,7 +17,8 @@ To install and activate the Troy Web Applicant Theme on your WordPress site, fol
 2. **Extract the ZIP File**: Unzip the file. It contains the `wp-content` directory with the theme, any custom plugins, and the database export.
 3. **Upload to WordPress**: Upload the `wp-content` contents to your WordPress installation directory, either via FTP or directly through your hosting file manager.
 4. **Activate the Theme**: Go to your WordPress dashboard under `Appearance > Themes`. Find 'Troy Web Applicant Theme' and click 'Activate'.
-5. **Import Database**: Import the `local.sql` file found in the `wp-content/database` directory to your WordPress database using phpMyAdmin or a similar tool.
+5. **Activate ACF Plugin**: Ensure that the Advanced Custom Fields (ACF) plugin is activated in your WordPress installation.
+6. **Import Database**: Import the `local.sql` file found in the `wp-content/database` directory to your WordPress database using phpMyAdmin or a similar tool.
 
 ## Usage
 - Navigate to the 'Applicants' section to add or modify applicant profiles.
